@@ -16,9 +16,9 @@ Receives data from arduino using otis-arduino code through TCP, and stores in SQ
 
 ## noSQL
 noSQL branch doesn't require SQL... 
-2. IP address of arduino board may need to be modified depending on the arduino board IP.
-3. This will also send data to [AK/otis-arduino](https://github.com/Artem1199/otis-arduino) that an interact with keyboard controls
-4. "I, J, K, L" send directional commands, "P" selects PID control, "F" selects fuzzy logic control, "O" sets the setpoint back to balanced.
+1. IP address of arduino board may need to be modified depending on the arduino board IP.
+2. This will also send data to [AK/otis-arduino](https://github.com/Artem1199/otis-arduino) that an interact with keyboard controls
+3. "I, J, K, L" send directional commands, "P" selects PID control, "F" selects fuzzy logic control, "O" sets the setpoint back to balanced.
 
 ### Use:
 1. Install Rust: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` assuming you have curl
