@@ -1,0 +1,13 @@
+/home/artem/Desktop/Git/otis-TCP/target/debug/deps/memchr-3daf40e1f337e844.rmeta: /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/lib.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/fallback.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/iter.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/naive.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/mod.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/avx.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/sse2.rs
+
+/home/artem/Desktop/Git/otis-TCP/target/debug/deps/libmemchr-3daf40e1f337e844.rlib: /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/lib.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/fallback.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/iter.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/naive.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/mod.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/avx.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/sse2.rs
+
+/home/artem/Desktop/Git/otis-TCP/target/debug/deps/memchr-3daf40e1f337e844.d: /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/lib.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/fallback.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/iter.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/naive.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/mod.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/avx.rs /home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/sse2.rs
+
+/home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/lib.rs:
+/home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/fallback.rs:
+/home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/iter.rs:
+/home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/naive.rs:
+/home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/mod.rs:
+/home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/avx.rs:
+/home/artem/.cargo/registry/src/github.com-1ecc6299db9ec823/memchr-2.3.3/src/x86/sse2.rs:

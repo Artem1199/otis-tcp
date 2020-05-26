@@ -5,6 +5,6 @@ table! {
         YAW -> Float,
         OUTPUT1 -> Float,
         OUTPUT2 -> Float,
-        reading_time -> Timestamp,
+        reading_time -> Nullable<Timestamp>,
     }
 }
