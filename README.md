@@ -14,6 +14,16 @@ Receives data from arduino using otis-arduino code through TCP, and stores in SQ
 2. `cargo run` to execute the program.
 3. If you're arduino is properly setup to send data then this should communicate with `otis-arduino` software
 
+## noSQL
+noSQL branch doesn't require SQL... 
+2. IP address of arduino board may need to be modified depending on the arduino board IP.
+3. This will also send data to [AK/otis-arduino](https://github.com/Artem1199/otis-arduino) that an interact with keyboard controls
+4. "I, J, K, L" send directional commands, "P" selects PID control, "F" selects fuzzy logic control, "O" sets the setpoint back to balanced.
+
+### Use:
+1. Install Rust: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` assuming you have curl
+2. Then `cargo run` to run the program.  The program will wait for a connection with `otis-arduino`.
+
 Requires diesel_cli, mysql
 
 1. mysql database has to be setup for diesel migration
