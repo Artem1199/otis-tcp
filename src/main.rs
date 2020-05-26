@@ -5,8 +5,6 @@ use std::io::{Read, Write};
 use std::net::TcpStream;
 use std::str::from_utf8;
 use byteorder::{ByteOrder, LittleEndian};
-use diesel::prelude::*;
-use diesel::mysql::MysqlConnection;
 use dotenv::dotenv;
 use std::env;
 use std::time::Duration;
@@ -15,63 +13,9 @@ use std::time::Instant;
 
 use std::f32::consts::PI;
 
-
-use self::models::*;
-
-pub mod schema;
-pub mod models;
-
-#[derive(Queryable)]
-pub struct Otis_AK{
-    pub id: i32,
-    pub PITCH: f32,
-    pub YAW: f32,
-    pub OUTPUT1: f32,
-    pub OUTPUT2: f32,
-}
-
-pub fn save_data<'a>(conn: &MysqlConnection, 
-    PITCH: &'a f32,
-    YAW: &'a f32,
-    OUTPUT1: &'a f32,
-    OUTPUT2: &'a f32,) {
-
-     use schema::OtisData;
-
-     let new_data = NewData{
-         PITCH:PITCH,
-         YAW:YAW,
-         OUTPUT1:OUTPUT1,
-         OUTPUT2:OUTPUT2,
-     };
-
-     diesel::insert_into(OtisData::table)
-     .values(&new_data)
-     .execute(conn); //alt use get_result()
-     //expect("Error saving new post");
-
-    }
-
-
-
-pub fn establish_connection() -> MysqlConnection {
-    dotenv().ok();
-
-    let database_url = env::var("DATABASE_URL")
-        .expect("DATABASE_URL must be set");
-    MysqlConnection::establish(&database_url)
-        .expect(&format!("Error connecting to {}", database_url))
-}
-
 fn main () -> std::io::Result<()>{
 
     let device_state = DeviceState::new();
-
-    // Initial connection with database
-    let connection = establish_connection();
-
-    // Clear main database table on start
-    connection.execute("TRUNCATE TABLE OtisData").unwrap();
 
     // Initial TCP connection with Arduino
     let mut stream = attempt_arduino_connection();
@@ -90,11 +34,9 @@ fn main () -> std::io::Result<()>{
         if data == [0 as u8; 8]{
             println!("Connection lost");
             stream = attempt_arduino_connection();
-            connection.execute("TRUNCATE TABLE OtisData").unwrap();
         }
 
         let keys: Vec<Keycode> = device_state.get_keys();
-        
         
         if (sent_time.elapsed().as_millis() > 500){
             if(keys.contains(&Keycode::I)){
@@ -124,9 +66,7 @@ fn main () -> std::io::Result<()>{
 	    if(keys.contains(&Keycode::F)){
                 stream.write(&[7]);
                 let sent_time = Instant::now();
-            }
-		
-		
+            }	
         }
         
         // decode data stream
@@ -141,13 +81,9 @@ fn main () -> std::io::Result<()>{
 
        println!("P: {}, Y: {}, O: {}, G: {}", p_float, y_float, o_float, g_float);
 
-        // save data to mysql server
-        save_data(&connection, &p_float, &y_float, &o_float, &g_float);
         // reset data buffer
         data = [0 as u8; 8];
     }
-
-
 }
 
 pub fn attempt_arduino_connection () -> std::net::TcpStream {
@@ -155,8 +91,8 @@ pub fn attempt_arduino_connection () -> std::net::TcpStream {
     // attempt to connect to arduino on loop
     let mut stream = loop {
 
-/* "192.168.50.45:80" for MKR on older twip */
-/* "192.168.50.181:80" for newer robot */
+    /* "192.168.50.45:80" for MKR on older twip */
+    /* "192.168.50.181:80" for newer robot */
 
         if let Ok(stream) = TcpStream::connect("192.168.50.181:80") { 
             println!("Connected to the server!");
