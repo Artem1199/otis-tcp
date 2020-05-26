@@ -97,34 +97,43 @@ fn main () -> std::io::Result<()>{
         
         
         if (sent_time.elapsed().as_millis() > 500){
-            if(keys.contains(&Keycode::W)){
+            if(keys.contains(&Keycode::I)){
                 stream.write(&[1]);
                 let sent_time = Instant::now();
             }
-            if(keys.contains(&Keycode::S)){
+            if(keys.contains(&Keycode::K)){
                 stream.write(&[2]);
                 let sent_time = Instant::now();
             }
-            if(keys.contains(&Keycode::R)){
+            if(keys.contains(&Keycode::O)){
                 stream.write(&[3]);
                 let sent_time = Instant::now();
             } 
-	    if(keys.contains(&Keycode::D)){
+	    if(keys.contains(&Keycode::L)){
                 stream.write(&[4]);
                 let sent_time = Instant::now();
             } 
-	    if(keys.contains(&Keycode::A)){
+	    if(keys.contains(&Keycode::J)){
                 stream.write(&[5]);
                 let sent_time = Instant::now();
-            } 
+            }
+	    if(keys.contains(&Keycode::P)){
+                stream.write(&[6]);
+                let sent_time = Instant::now();
+            }
+	    if(keys.contains(&Keycode::F)){
+                stream.write(&[7]);
+                let sent_time = Instant::now();
+            }
+		
 		
         }
         
         // decode data stream
        let mut p = [data[0] as u8, data[1] as u8];
-       let p_float: f32 = ((LittleEndian::read_u16(&p) as f32) / 10436.0 - 3.14) * 180.0/(PI) ;
+       let p_float: f32 = ((LittleEndian::read_u16(&p) as f32) / 10436.381 - PI) * 180.0/(PI) ;
        let mut y = [data[2] as u8, data[3] as u8];
-       let y_float: f32 = ((LittleEndian::read_u16(&y) as f32) / 10436.0 - 3.14) * 180.0/(PI) ;
+       let y_float: f32 = ((LittleEndian::read_u16(&y) as f32) / 10436.381 - PI) * 180.0/(PI) ;
        let mut o = [data[4] as u8, data[5] as u8];
        let o_float: f32 = (LittleEndian::read_u16(&o) as f32) / 33.0 - 1000.0 ;
        let mut g = [data[6] as u8, data[7] as u8];
