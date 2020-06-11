@@ -90,13 +90,12 @@ fn main () -> std::io::Result<()>{
         if data == [0 as u8; 8]{
             println!("Connection lost");
             stream = attempt_arduino_connection();
-            connection.execute("TRUNCATE TABLE OtisData").unwrap();
         }
 
         let keys: Vec<Keycode> = device_state.get_keys();
         
         
-        if (sent_time.elapsed().as_millis() > 500){
+        if (sent_time.elapsed().as_millis() > 10){
             if(keys.contains(&Keycode::I)){
                 stream.write(&[1]);
                 let sent_time = Instant::now();
