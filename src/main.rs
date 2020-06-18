@@ -1,6 +1,4 @@
 #[macro_use]
-extern crate diesel;
-
 use std::io::{Read, Write};
 use std::net::TcpStream;
 use std::str::from_utf8;
